@@ -8,19 +8,24 @@ input-1   in binary 0111
 input anded with one number less than input
 will always evaluate to 0 */
 
-/*effeciency of this logic is very high
-because binary calculations are very fast */
-
 #include<stdio.h>
-int main (){
-printf ("enter the no. to check \n");
-int in;
-scanf ("%d",&in);
+int main ()
+{
+    printf ("enter the no. to check \n");
+    int in;
+    scanf ("%d",&in);
 
-if ((in & (in-1)) == 0 ) // this is main condition
-    printf ("yes");
+    // main part starts
+    //if the number is negative taking 2's complimentof the no.
+    /*because negative no. are stored as 2's of pesitive no.
+    taking 2'complement of a negative number converts it to its
+    equivalent +ve number */
+    if (in<0) in = ~in+1;
+    if ((in & (in-1)) == 0 )
+        printf ("yes");
 
-else
-    printf ("no");
+    else
+        printf ("no");
+return 0;
 
- }
+}
